@@ -1,0 +1,19 @@
+How to set up R for java
+
+- Set environment variable (user) R_LIBS_USER to R library path, for instance, C:/Program Files/R/R-3.6.1/library
+(- Deinstall anything related to R (R binaries, RStudio, ...))
+- Install R
+- Start the R console as admin
+- Execute prompt "install.packages("rJava")"
+- find location of jri-installation folder with prompt "system.file("jri",package="rJava")"                  
+
+- add following variables to PATH: 
+	C:\Program Files\R\R-3.5.1\library\rJava\jri\x64
+	C:\Program Files\R\R-3.5.1\bin\x64
+
+
+- set up a java project and include jar libraries from the folder where jri is installed (project -> Build path -> Libraries -> add external jars)
+- add native.library.location of JRE system library (under Libraries): set to path of jar files (C:\Program Files\R\R-3.5.1\library\rJava\jri\x64)
+- Run configurations:
+	-- add R_HOME environment variable: Run configurations -> Environment add R_HOME (set to path of R, can ask by R.home() in R)
+	--add programm variable --no save
